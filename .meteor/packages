@@ -7,3 +7,15 @@
 meteor-platform
 autopublish
 insecure
+underscore
+iron:router
+aldeed:collection2
+aldeed:autoform
+aldeed:simple-schema
+zimme:iron-router-active
+email
+d3js:d3
+mizzao:bootstrap-3
+standard-app-packages
+jquery
+reload
