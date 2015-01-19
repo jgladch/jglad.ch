@@ -1,0 +1,20 @@
+<template name="home">
+  <div class="container">
+    <div class="jumbotron index">
+      <h1>jglad.ch</h1>
+      <p>developing digital products</p>
+      <span class="pull-right">
+        <button class="btn btn-primary contact">Contact me</button>
+      </span>
+    </div>
+    <div class="d3">
+    </div>
+    {{#momentum plugin="right-to-left"}}
+      {{#if showForm}}
+        <div class="jumbotron">
+          {{>quickForm collection="Contacts" buttonContent="Contact me"}}
+        </div>
+      {{/if}}
+    {{/momentum}}
+  </div>
+</template>
