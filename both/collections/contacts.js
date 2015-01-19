@@ -1,16 +1,20 @@
 Contacts = new Mongo.Collection('Contacts');
 
 Schemas.Contact = new SimpleSchema({
-  name: {
+  inquiry: {
+    type: Object,
+    label: "Your information"
+  },
+  'inquiry.name': {
     type: String,
     label: "Name"
   },
-  email: {
+  'inquiry.email': {
     type: String,
     label: "Email",
     regEx: SimpleSchema.RegEx.Email
   },
-  text: {
+  'inquiry.text': {
     type: String,
     label: 'About your company and project'
   },
@@ -23,7 +27,7 @@ Schemas.Contact = new SimpleSchema({
   },
   'services.design': {
     type: Boolean,
-    label: 'design'
+    label: 'Design'
   },
   'services.engineering': {
     type: Boolean,

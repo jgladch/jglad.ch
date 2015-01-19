@@ -1,20 +1,48 @@
 <template name="home">
   <div class="container">
-    <div class="jumbotron index">
+    <div class="jumbotron home">
       <h1>jglad.ch</h1>
-      <p>developing digital products</p>
+      <p>I build fantastic digital products</p>
+      <span class="pull-left">
+        <button class="btn btn-primary about">About</button>
+      </span>
       <span class="pull-right">
         <button class="btn btn-primary contact">Contact me</button>
       </span>
     </div>
     <div class="d3">
     </div>
-    {{#momentum plugin="right-to-left"}}
+    {{#momentum plugin="slide-height"}}
       {{#if showForm}}
-        <div class="jumbotron">
-          {{>quickForm collection="Contacts" buttonContent="Contact me"}}
-        </div>
+        {{> contact}}
       {{/if}}
     {{/momentum}}
+  </div>
+</template>
+
+<template name="contact">
+  <div class="jumbotron">
+    <!-- {{>quickForm collection="Contacts" buttonContent="Contact me"}} -->
+    {{#autoForm collection="Contacts" id="contactForm" type="insert"}}
+      <fieldset>
+        <div class="col-md-6">
+          {{> afQuickField name="inquiry"}}
+        </div>
+        <div class="col-md-6">
+          <div class="container">
+            <div class="col-md-6">
+              {{> afQuickField name="services"}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name="timing"}}
+            </div>
+          </div>
+          <div class="container">
+            {{> afQuickField name="budget"}}
+          </div>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary">Send</button>
+    {{/autoForm}}
   </div>
 </template>
